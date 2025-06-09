@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {Editor} from 'primeng/editor';
 import {TextUtilService} from '../../services/text-util.service';
