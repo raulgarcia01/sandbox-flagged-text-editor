@@ -1,0 +1,36 @@
+<div>
+  <h2 class="text-lg text-center font-bold mb-2 text-gray-950 underline">
+    Suggest Panel
+  </h2>
+  <div class="flex flex-col gap-2 text-gray-950">
+    <label for="flagged-sentence">Flagged sentence</label>
+    <input pInputText id="flagged-sentence" aria-describedby="flagged-desc"
+           [(ngModel)]="flaggedSentence"  (input)="sendFlaggedSentence()"/>
+    <small id="flagged-desc">Please the flagged sentence you want to replace.</small>
+  </div>
+  <br/>
+  <div class="flex flex-col gap-2 text-gray-950">
+    <label for="suggestion-sentence">Suggestion sentence</label>
+    <input pInputText id="suggestion-sentence" aria-describedby="suggestion-label" [(ngModel)]="suggestedSentence" />
+    <small id="suggestion-label">Please the suggested sentence you want to substitute.</small>
+  </div>
+  <br/>
+  <div>
+    <span class="block font-bold mb-4">Text Match</span>
+    <div class="grid grid-cols-12 gap-4">
+        <div class="flex items-center gap-2 col-span-6">
+          <p-radioButton id="exact" name="text-match" value="full" [(ngModel)]="selectedTextMatch"/>
+          <label for="exact">Exact match</label>
+        </div>
+        <div class="flex items-center gap-2 col-span-6">
+          <p-radioButton id="flexible" name="text-match" value="partial" [(ngModel)]="selectedTextMatch" />
+          <label for="flexible">Flexible Matching</label>
+        </div>
+      </div>
+  </div>
+  <br/><br/>
+  <div class="flex flex-row justify-center gap-4">
+    <p-button id="undo" label="Undo" icon="pi pi-undo" severity="contrast" (click)="applyUndoChange()" />
+    <p-button id="apply" label="Apply" icon="pi pi-undo" severity="info" (click)="applyTextReplacement()" />
+  </div>
+</div>
